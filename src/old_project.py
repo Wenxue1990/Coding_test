@@ -1,8 +1,4 @@
 
-# coding: utf-8
-
-# In[1]:
-
 import sys
 import re
 
@@ -95,7 +91,6 @@ def main(inputfile,outputfile):
 
 #inputfile = './input/de_cc_data.txt'
 #outputfile = './output/top_cost_drug.txt'
-
 inputfile=sys.argv[1] 
 outputfile=sys.argv[2]
 
@@ -104,9 +99,4 @@ if flag==1:
     print ('Complete!')
 else:
     print ('Error')
-
-
-# In[ ]:
-
-
 
