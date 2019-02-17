@@ -2,6 +2,53 @@
 import sys
 import re
 
+
+
+def main(inputfile,outputfile):
+    dict_cost={}
+    dict_unique={}
+    try:
+        f = open(inputfile) 
+    except:
+        print ('Input dataset directory can not be opened!')
+        return 0
+
+    line = f.readline() # skip header line in input dataset 
+    line = f.readline()
+    
+    count=0
+    # update drug_name dictionary line by line
+    while line:       
+        dict_cost,dict_unique=updata_dict(line, dict_cost, dict_unique)
+        line = f.readline()   
+        count+=1
+        if (count%2000000)==0:
+            print (int(count/1000000),'M lines are processed!')
+    f.close()
+    
+    # calcualte the number of unique prescribers and sort results in descending order
+    lines=[]
+    for key, value in sorted(dict_cost.items(), key=lambda x: (x[1], x[0]),reverse=True):
+        if key=='Missing':
+            drug_name='Unknown'
+        else:
+            drug_name=key    
+        line=drug_name+','+str(len(set(dict_unique[key])))+','+str('{0:.2f}'.format(value).rstrip('0').rstrip('.'))+'\n'
+        lines.append(line)
+        
+    # write results to desired folder
+    try:
+        f = open(outputfile, "w")
+    except:
+        print ('Output directory can not be opened!')
+        return 0
+        
+    f.writelines('drug_name,num_prescriber,total_cost\n')
+    f.writelines(lines)
+    f.close()
+   
+    return 1
+
 def check_float(value):
     try:
         value=float(value)
@@ -43,54 +90,6 @@ def updata_dict(line, dict_cost, dict_unique):
     
     return (dict_cost,dict_unique)
 
-def main(inputfile,outputfile):
-    dict_cost={}
-    dict_unique={}
-    try:
-        f = open(inputfile) 
-    except:
-        print ('Input dataset directory can not be opened!')
-        return 0
-
-    line = f.readline() # skip header line in input dataset
-    line = f.readline()
-    
-    count=0
-    # update drug_name dictionary line by line
-    while line:       
-        dict_cost,dict_unique=updata_dict(line, dict_cost, dict_unique)
-        line = f.readline()   
-        count+=1
-        if (count%2000000)==0:
-            print (int(count/1000000),'M lines are processed!')
-    f.close()
-    
-    # calcualte the number of unique prescribers and sort results in descending order
-    lines=[]
-    for key, value in sorted(dict_cost.items(), key=lambda x: (x[1], x[0]),reverse=True):
-        if key=='Missing':
-            drug_name='Unknown'
-        else:
-            drug_name=key    
-        line=drug_name+','+str(len(set(dict_unique[key])))+','+str('{0:.2f}'.format(value).rstrip('0').rstrip('.'))+'\n'
-        lines.append(line)
-        
-    # write results to desired folder
-    try:
-        f = open(outputfile, "w")
-    except:
-        print ('Output directory can not be opened!')
-        return 0
-        
-    f.writelines('drug_name,num_prescriber,total_cost\n')
-    f.writelines(lines)
-    f.close()
-   
-    return 1
-
-
-#inputfile = './input/de_cc_data.txt'
-#outputfile = './output/top_cost_drug.txt'
 inputfile=sys.argv[1] 
 outputfile=sys.argv[2]
 
