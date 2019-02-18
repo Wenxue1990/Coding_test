@@ -2,9 +2,9 @@
 1. [Problem](README.md#problem)
 1. [Input Dataset](README.md#input-dataset)
 1. [Instructions](README.md#instructions)
-1. [Output](README.md#output)
-1. [Tips on getting an interview](README.md#tips-on-getting-an-interview)
-1. [Questions?](README.md#questions?)
+1. [Input vs Output](README.md#output)
+1. [Summarize my approach and run instructions](README.md#tips-on-getting-an-interview)
+1. [What to improve](README.md#questions?)
 
 # Problem
 
@@ -24,13 +24,13 @@ The original dataset was obtained from the Centers for Medicare & Medicaid Servi
 
 # Instructions
 
-The code is writen and tested in jupyter notebook. 
+The code is created and tested in Jupyter notebook. 
 System version: 3.6.1 |Anaconda 4.4.0 (64-bit)| (default, May 11 2017, 13:25:24) [MSC v.1900 64 bit (AMD64)]
 All tests passed and proved the final confirmation as: "Process Complete!"
+Additional Libraries used: sys, re, datetime
 Details of input vs output will be detailed in the following chapter. 
 
 
-***The objective here is to see if you can implement the solution using basic data structure building blocks and software engineering best practices (by writing clean, modular, and well-tested code).*** 
 
 # Input vs Output 
 
@@ -61,7 +61,7 @@ BENZTROPINE MESYLATE,1,1500
 AMBIEN,2,300
 ```
 
-Test case 2:
+Test case 2, self created case so that the input data are not clean and contains erros such as missing prescriber name, negative cost value, wrong data format, etc, that could be contained in the real word:
 
 My input data, **`itcont.txt1`**, is
 ```
@@ -98,7 +98,7 @@ Process Complete!
 Time taken: 0:00:00.005361
 ```
 
-Test case 3:
+Test case 3, using a large data set provided by the the link below and use datetime library to evaluate processing time of the program:
 
 My input data is downloaded from the provided link <a href="https://drive.google.com/file/d/1fxtTLR_Z5fTO-Y91BnKOQd6J0VC9gPO3/view?usp=sharing">Here</a>:
 
@@ -127,86 +127,52 @@ Time taken: 0:03:54.917637
 
 First two testing files are provided in the `Coding_test/tests/test_1/input` and `Coding_test/tests/test_1/output` folders, respectively.
 
-Other testing files are uploaded in the....
 
 
 
-# Tips on getting an interview
+# summarize your approach and run instructions
 
-## Writing clean, scalable and well-tested code
+The approach is as follows:
+0)main(inputfile, outputfile), requires inputfile and outputfile as input. 
+1)Construct two libraries: 1)dict_cost: {drug : cost} 2) dict_prescriber: {drug: subscriber list}
+2)open inputfile 
+3)process data line by line 
+4)Using dict_newdata(line, dict_cost, dict_prescriber ) to update and process dicttionaries: dict_cost and dict_prescriber, so that drug_cost could be added up for same drug name and prescribers are unique and calculated. 
+For large dataset, each million lines processed will be printed out
+5)Construct correct structure for lines to be written in the ouput file
+6)If main program processed successfully, calculate total processing time and print "Process Complete!"
 
-As a data engineer, it’s important that you write clean, well-documented code that scales for a large amount of data. For this reason, it’s important to ensure that your solution works well for a large number of records, rather than just the above example.
-
-<a href="https://drive.google.com/file/d/1fxtTLR_Z5fTO-Y91BnKOQd6J0VC9gPO3/view?usp=sharing">Here</a> you can find a large dataset containing over 24 million records. Note, we will use it to test the full functionality of your code, along with other tests.
-
-It's also important to use software engineering best practices like unit tests, especially since data is not always clean and predictable.
-
-Before submitting your solution you should summarize your approach and run instructions (if any) in your `README`.
-
-You may write your solution in any mainstream programming language, such as C, C++, C#, Go, Java, Python, Ruby, or Scala. Once completed, submit a link of your Github or Bitbucket repo with your source code.
-
-In addition to the source code, the top-most directory of your repo must include the `input` and `output` directories, and a shell script named `run.sh` that compiles and runs the program(s) that implement(s) the required features.
-
-If your solution requires additional libraries, environments, or dependencies, you must specify these in your `README` documentation. See the figure below for the required structure of the top-most directory in your repo, or simply clone this repo.
-
-## Repo directory structure
+## My Repo directory structure
 
 The directory structure for your repo should look like this:
 
     ├── README.md 
     ├── run.sh
     ├── src
-    │   └── pharmacy-counting.py
+    │   └── WZ_pharmacy-counting.py
     ├── input
-    │   └── itcont.txt
+    │   └── itcont1.txt
     ├── output
-    |   └── top_cost_drug.txt
+    |   └── top_cost_drug_1.txt
     ├── insight_testsuite
         └── run_tests.sh
         └── tests
             └── test_1
-            |   ├── input
-            |   │   └── itcont.txt
-            |   |__ output
-            |   │   └── top_cost_drug.txt
-            ├── your-own-test_1
                 ├── input
-                │   └── your-own-input-for-itcont.txt
-                |── output
+                │   └── itcont.txt
+                |__ output
                     └── top_cost_drug.txt
+         
 
 **Don't fork this repo** and don't use this `README` instead of your own. The content of `src` does not need to be a single file called `pharmacy-counting.py`, which is only an example. Instead, you should include your own source files and give them expressive names.
 
-## Testing your directory structure and output format
+## Testing result of my directory structure and output format
 
-To make sure that your code has the correct directory structure and the format of the output files are correct, we have included a test script called `run_tests.sh` in the `insight_testsuite` folder.
+My submission has passed the provided test in order to pass the coding challenge.
 
-The tests are stored simply as text files under the `insight_testsuite/tests` folder. Each test should have a separate folder with an `input` folder for `itcont.txt` and an `output` folder for `top_cost_drug.txt`.
-
-You can run the test with the following command from within the `insight_testsuite` folder:
-
-    insight_testsuite~$ ./run_tests.sh 
-
-On a failed test, the output of `run_tests.sh` should look like:
-
-    [FAIL]: test_1
-    [Thu Mar 30 16:28:01 PDT 2017] 0 of 1 tests passed
-
-On success:
-
-    [PASS]: test_1
-    [Thu Mar 30 16:25:57 PDT 2017] 1 of 1 tests passed
+I also tested my repository through the following link: <a href="http://ec2-18-210-131-67.compute-1.amazonaws.com/test-my-repo-link">website</a> by simulating the environment end test out that all tests are passed. 
 
 
+# What to improve
+If different types of error data examples are provided/summed up, I could dig more into the error data handling process using libraries such as:NumPy, Pandas, etc
 
-One test has been provided as a way to check your formatting and simulate how we will be running tests when you submit your solution. We urge you to write your own additional tests. `test_1` is only intended to alert you if the directory structure or the output for this test is incorrect.
-
-Your submission must pass at least the provided test in order to pass the coding challenge.
-
-I also tested my repository through the following link: <a href="http://ec2-18-210-131-67.compute-1.amazonaws.com/test-my-repo-link">website</a> 
-
-by simulating the environment end test out that all tests are passed. 
-
-
-# Questions?
-Email us at cc@insightdataengineering.com
