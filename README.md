@@ -32,18 +32,18 @@ Details of input vs output will be detailed in the following chapter.
 
 ***The objective here is to see if you can implement the solution using basic data structure building blocks and software engineering best practices (by writing clean, modular, and well-tested code).*** 
 
-# Output 
+# Input vs Output 
 
-Your program needs to create the output file, `top_cost_drug.txt`, that contains comma (`,`) separated fields in each line.
+The program aims at creating the output file, for example: `top_cost_drug.txt`, that contains comma (`,`) separated fields in each line.
 
 Each line of this file should contain these fields:
 * drug_name: the exact drug name as shown in the input dataset
 * num_prescriber: the number of unique prescribers who prescribed the drug. For the purposes of this challenge, a prescriber is considered the same person if two lines share the same prescriber first and last names
 * total_cost: total cost of the drug across all prescribers
 
-For example
+Test case 1: 
 
-If your input data, **`itcont.txt`**, is
+My input data, **`itcont.txt`**, is
 ```
 id,prescriber_last_name,prescriber_first_name,drug_name,drug_cost
 1000000001,Smith,James,AMBIEN,100
@@ -53,13 +53,47 @@ id,prescriber_last_name,prescriber_first_name,drug_name,drug_cost
 1000000005,Smith,David,BENZTROPINE MESYLATE,1500
 ```
 
-then your output file, **`top_cost_drug.txt`**, would contain the following lines
+My output file, **`top_cost_drug.txt`**, would contain the following lines
 ```
 drug_name,num_prescriber,total_cost
 CHLORPROMAZINE,2,3000
 BENZTROPINE MESYLATE,1,1500
 AMBIEN,2,300
 ```
+
+
+My input data, **`itcont.txt1`**, is
+```
+id,prescriber_last_name,prescriber_first_name,drug_name,drug_cost
+1000000001,Smith,James,AMBIEN,-100
+1000000002,Garcia,Maria,AMBIEN,200
+1000000003,Johnson,James,CHLORPROMAZINE,1000
+1000000004,Rodriguez,Maria,CHLORPROMAZINE,2000
+1000000005,Smith,David,BENZTROPINE MESYLATE,1500
+1000000006,Garcia,,AMBIEN,200
+1000000007,Johnson,James,CHLORPROMAZINE,$1000
+1000000008,Rodriguez,,CHLORPROMAZINE,
+1000000009,Smith,David,BENZTROPINE MESYLATE,...
+```
+
+My output file, **`top_cost_drug_1.txt`**, would contain the following lines
+```
+drug_name,num_prescriber,total_cost
+CHLORPROMAZINE,2,3000
+BENZTROPINE MESYLATE,1,1500
+AMBIEN,2,400
+```
+
+System output by running jupyter notebook:
+This line is not splited correctly/invalid cost value and is skipped: ['1000000001', 'Smith', 'James', 'AMBIEN', '-100']
+This line is not splited correctly/invalid cost value and is skipped: ['1000000007', 'Johnson', 'James', 'CHLORPROMAZINE', '$1000']
+This line is not splited correctly/invalid cost value and is skipped: ['1000000008', 'Rodriguez', 'NA', 'CHLORPROMAZINE', '']
+This line is not splited correctly/invalid cost value and is skipped: ['1000000009', 'Smith', 'David', 'BENZTROPINE MESYLATE', '...']
+dict_cost {'AMBIEN': 400.0, 'CHLORPROMAZINE': 3000.0, 'BENZTROPINE MESYLATE': 1500.0}
+dict_prescriber {'AMBIEN': ['Garcia Maria', 'Garcia NA'], 'CHLORPROMAZINE': ['Johnson James', 'Rodriguez Maria'], 'BENZTROPINE MESYLATE': ['Smith David']}
+9 total lines of data processed
+Process Complete!
+Time taken: 0:00:00.006615
 
 These files are provided in the `insight_testsuite/tests/test_1/input` and `insight_testsuite/tests/test_1/output` folders, respectively.
 
