@@ -108,7 +108,7 @@ def dict_newdata (line, dict_cost, dict_prescriber):
     # double check line is splited correctly
     # otherwise skip this function
     
-    if cost_flag&(len(line)==5)&(drug_cost>0):
+    if cost_flag&(len(line)==5)&(drug_cost>=0):
         
         # if drug_name isn't in dictonary key(dict_cost) list, create one
         
