@@ -14,15 +14,15 @@ Disclosure: The projects that Insight Data Engineering Fellows work on during th
 
 
 
-# Submitting a link to your repository
+### Submitting a link to your repository
 * Link to the specific repo for this project is submitted to the submission box provided through the coding challenge email
 
 
-# Input Dataset
+### Input Dataset
 
 The original dataset was obtained from the Centers for Medicare & Medicaid Services but has been cleaned and simplified to match the scope of the coding challenge. It provides information on prescription drugs prescribed by individual physicians and other health care providers. The dataset identifies prescribers by their ID, last name, and first name.  It also describes the specific prescriptions that were dispensed at their direction, listed by drug name and the cost of the medication. 
 
-# Instructions
+### Instructions
 
 The code is created and tested in Jupyter notebook. 
 System version: 3.6.1 |Anaconda 4.4.0 (64-bit)| (default, May 11 2017, 13:25:24) [MSC v.1900 64 bit (AMD64)]
@@ -32,7 +32,7 @@ Details of input vs output will be detailed in the following chapter.
 
 
 
-# Input vs Output 
+### Input vs Output 
 
 The program aims at creating the output file, for example: `top_cost_drug.txt`, that contains comma (`,`) separated fields in each line.
 
@@ -127,7 +127,7 @@ Time taken: 0:03:54.917637
 First two testing files are provided in the `Coding_test/tests/test_1/input` and `Coding_test/tests/test_1/output` folders, respectively.
 
 
-# summarize your approach and run instructions
+### summarize your approach and run instructions
 
 The approach is as follows:
 0)main(inputfile, outputfile), requires inputfile and outputfile as input. 
@@ -139,7 +139,7 @@ For large dataset, each million lines processed will be printed out
 5)Construct correct structure for lines to be written in the ouput file
 6)If main program processed successfully, calculate total processing time and print "Process Complete!"
 
-# My Repo directory structure
+### My Repo directory structure
 
 The directory structure for your repo should look like this:
 
@@ -161,13 +161,13 @@ The directory structure for your repo should look like this:
                     └── top_cost_drug.txt
          
 
-# Testing result of my directory structure and output format
+### Testing result of my directory structure and output format
 
 My submission has passed the provided test in order to pass the coding challenge.
 
 I also tested my repository through the following link: <a href="http://ec2-18-210-131-67.compute-1.amazonaws.com/test-my-repo-link">website</a> by simulating the environment end test out that all tests are passed. 
 
 
-# What to improve
+### What to improve
 If different types of error data examples are provided/summed up, I could dig more into the error data handling process using libraries such as:NumPy, Pandas, etc
 
