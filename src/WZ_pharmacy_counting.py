@@ -126,14 +126,12 @@ def dict_newdata (line, dict_cost, dict_prescriber):
 
 #inputfile = 'de_cc_data.txt'
 
-inputfile = 'itcont1.txt'
-outputfile = 'top_cost_drug1.txt'
+#inputfile = 'itcont1.txt'
+#outputfile = 'top_cost_drug1.txt'
 
-#inputfile=sys.argv[1] 
-#outputfile=sys.argv[2]
+inputfile=sys.argv[1] 
+outputfile=sys.argv[2]
 
-
-#flag=main(inputfile,outputfile) # run main function!
 
 return_value = main(inputfile,outputfile)
 
