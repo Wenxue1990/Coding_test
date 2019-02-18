@@ -84,7 +84,9 @@ BENZTROPINE MESYLATE,1,1500
 AMBIEN,2,400
 ```
 
+
 System output by running jupyter notebook:
+```
 This line is not splited correctly/invalid cost value and is skipped: ['1000000001', 'Smith', 'James', 'AMBIEN', '-100']
 This line is not splited correctly/invalid cost value and is skipped: ['1000000007', 'Johnson', 'James', 'CHLORPROMAZINE', '$1000']
 This line is not splited correctly/invalid cost value and is skipped: ['1000000008', 'Rodriguez', 'NA', 'CHLORPROMAZINE', '']
@@ -94,6 +96,7 @@ dict_prescriber {'AMBIEN': ['Garcia Maria', 'Garcia NA'], 'CHLORPROMAZINE': ['Jo
 9 total lines of data processed
 Process Complete!
 Time taken: 0:00:00.006615
+```
 
 These files are provided in the `insight_testsuite/tests/test_1/input` and `insight_testsuite/tests/test_1/output` folders, respectively.
 
