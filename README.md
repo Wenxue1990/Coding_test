@@ -14,7 +14,7 @@ Disclosure: The projects that Insight Data Engineering Fellows work on during th
 
 
 
-### Submitting a link to your repository
+# Submitting a link to your repository
 * Link to the specific repo for this project is submitted to the submission box provided through the coding challenge email
 
 
@@ -124,10 +124,7 @@ Process Complete!
 Time taken: 0:03:54.917637
 ```
 
-
 First two testing files are provided in the `Coding_test/tests/test_1/input` and `Coding_test/tests/test_1/output` folders, respectively.
-
-
 
 
 # summarize your approach and run instructions
@@ -142,7 +139,7 @@ For large dataset, each million lines processed will be printed out
 5)Construct correct structure for lines to be written in the ouput file
 6)If main program processed successfully, calculate total processing time and print "Process Complete!"
 
-## My Repo directory structure
+# My Repo directory structure
 
 The directory structure for your repo should look like this:
 
@@ -164,9 +161,7 @@ The directory structure for your repo should look like this:
                     └── top_cost_drug.txt
          
 
-**Don't fork this repo** and don't use this `README` instead of your own. The content of `src` does not need to be a single file called `pharmacy-counting.py`, which is only an example. Instead, you should include your own source files and give them expressive names.
-
-## Testing result of my directory structure and output format
+# Testing result of my directory structure and output format
 
 My submission has passed the provided test in order to pass the coding challenge.
 
