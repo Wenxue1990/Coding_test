@@ -61,6 +61,7 @@ BENZTROPINE MESYLATE,1,1500
 AMBIEN,2,300
 ```
 
+Test case 2:
 
 My input data, **`itcont.txt1`**, is
 ```
@@ -98,7 +99,37 @@ Process Complete!
 Time taken: 0:00:00.006615
 ```
 
-These files are provided in the `insight_testsuite/tests/test_1/input` and `insight_testsuite/tests/test_1/output` folders, respectively.
+Test case 3:
+
+My input data is downloaded from the provided link <a href="https://drive.google.com/file/d/1fxtTLR_Z5fTO-Y91BnKOQd6J0VC9gPO3/view?usp=sharing">Here</a>:
+
+The output data is written on file top_cost_drug1.txt
+
+System output by running jupyter notebook:
+
+```
+2 M lines processed
+4 M lines processed
+6 M lines processed
+8 M lines processed
+10 M lines processed
+12 M lines processed
+14 M lines processed
+16 M lines processed
+18 M lines processed
+20 M lines processed
+22 M lines processed
+24 M lines processed
+24525859 total lines of data processed
+Process Complete!
+Time taken: 0:03:54.917637
+```
+
+
+First two testing files are provided in the `Coding_test/tests/test_1/input` and `Coding_test/tests/test_1/output` folders, respectively.
+
+Other testing files are uploaded in the....
+
 
 
 # Tips on getting an interview
@@ -173,7 +204,10 @@ One test has been provided as a way to check your formatting and simulate how we
 
 Your submission must pass at least the provided test in order to pass the coding challenge.
 
-For a limited time we also are making available a <a href="http://ec2-18-210-131-67.compute-1.amazonaws.com/test-my-repo-link">website</a> that will allow you to simulate the environment in which we will test your code. It has been primarily tested on Python code but could be used for Java and C++ repos. Keep in mind that if you need to compile your code (e.g., javac, make), that compilation needs to happen in the `run.sh` file of your code repository. For Python programmers, you are able to use Python2 or Python3 but if you use the later, specify `python3` in your `run.sh` script.
+I also tested my repository through the following link: <a href="http://ec2-18-210-131-67.compute-1.amazonaws.com/test-my-repo-link">website</a> 
+
+by simulating the environment end test out that all tests are passed. 
+
 
 # Questions?
 Email us at cc@insightdataengineering.com
