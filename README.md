@@ -88,15 +88,14 @@ AMBIEN,2,400
 
 System output by running jupyter notebook:
 ```
-This line is not splited correctly/invalid cost value and is skipped: ['1000000001', 'Smith', 'James', 'AMBIEN', '-100']
-This line is not splited correctly/invalid cost value and is skipped: ['1000000007', 'Johnson', 'James', 'CHLORPROMAZINE', '$1000']
-This line is not splited correctly/invalid cost value and is skipped: ['1000000008', 'Rodriguez', 'NA', 'CHLORPROMAZINE', '']
-This line is not splited correctly/invalid cost value and is skipped: ['1000000009', 'Smith', 'David', 'BENZTROPINE MESYLATE', '...']
-dict_cost {'AMBIEN': 400.0, 'CHLORPROMAZINE': 3000.0, 'BENZTROPINE MESYLATE': 1500.0}
-dict_prescriber {'AMBIEN': ['Garcia Maria', 'Garcia NA'], 'CHLORPROMAZINE': ['Johnson James', 'Rodriguez Maria'], 'BENZTROPINE MESYLATE': ['Smith David']}
+This following line is skipped (not splited correctly/invalid cost value): ['1000000001', 'Smith', 'James', 'AMBIEN', '-100']
+This following line is skipped (not splited correctly/invalid cost value): ['1000000007', 'Johnson', 'James', 'CHLORPROMAZINE', '$1000']
+This following line is skipped (not splited correctly/invalid cost value): ['1000000008', 'Rodriguez', 'NA', 'CHLORPROMAZINE', '']
+This following line is skipped (not splited correctly/invalid cost value): ['1000000009', 'Smith', 'David', 'BENZTROPINE MESYLATE', '...']
 9 total lines of data processed
+['CHLORPROMAZINE,2,3000\n', 'BENZTROPINE MESYLATE,1,1500\n', 'AMBIEN,2,400\n']
 Process Complete!
-Time taken: 0:00:00.006615
+Time taken: 0:00:00.005361
 ```
 
 Test case 3:
