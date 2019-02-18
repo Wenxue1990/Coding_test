@@ -119,7 +119,7 @@ def dict_newdata (line, dict_cost, dict_prescriber):
             dict_cost[line[3]]=drug_cost
             dict_prescriber[line[3]]=[((line[1]+' '+line[2]))]  
     else:        
-        print ('This line is not splited correctly/invalid cost value and is skipped:',line)
+        print ('This following line is skipped (not splited correctly/invalid cost value):',line)
     
     return (dict_cost,dict_prescriber)
 
