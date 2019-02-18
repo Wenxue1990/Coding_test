@@ -51,7 +51,7 @@ def main(inputfile, outputfile):
         else:
             drug_name=key  
             
-        # all input and output value are integers regarding input and output sample  
+        # input data could be float and output data are integers (use float if is float) 
         
         line=drug_name+','+str(len(set(dict_prescriber[key])))+','+ str(int(value))+'\n'
         
@@ -59,7 +59,7 @@ def main(inputfile, outputfile):
         
         lines.append(line)
     
-    #print(lines)
+    print(lines)
     # write results to desired folder
     try:
         f = open(outputfile, "w")
@@ -76,7 +76,7 @@ def main(inputfile, outputfile):
 # check_num to check if splited drug_cost value is numerical value
 def check_num (value):
     try:
-        value=int(value)  # if smaple is float, could modify this as value = float(value)
+        value=float(value)  # if smaple is float, could modify this as value = float(value)
         return (True,value)
     except ValueError:
         return (False,-1)
@@ -126,12 +126,14 @@ def dict_newdata (line, dict_cost, dict_prescriber):
 
 #inputfile = 'de_cc_data.txt'
 
-#inputfile = 'itcont1.txt'
-#outputfile = 'top_cost_drug1.txt'
+inputfile = 'itcont1.txt'
+outputfile = 'top_cost_drug.txt'
 
-inputfile=sys.argv[1] 
-outputfile=sys.argv[2]
+#inputfile=sys.argv[1] 
+#outputfile=sys.argv[2]
 
+
+#flag=main(inputfile,outputfile) # run main function!
 
 return_value = main(inputfile,outputfile)
 
