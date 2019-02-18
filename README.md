@@ -1,6 +1,6 @@
 # Table of Contents
 1. [Problem](README.md#problem)
-1. [Input Dataset](README.md#Input Dataset)
+1. [Input Dataset](README.md#Input-Dataset)
 1. [Instructions](README.md#Instructions)
 1. [Input vs Output](README.md#Input vs Output)
 1. [Summarize my approach and run instructions](README.md#Summarize my approach and run instructions)
@@ -11,8 +11,6 @@
 Imagine you are a data engineer working for an online pharmacy. You are asked to generate a list of all drugs, the total number of UNIQUE individuals who prescribed the medication, and the total drug cost, which must be listed in descending order based on the total drug cost and if there is a tie, drug name in ascending order. 
 
 Disclosure: The projects that Insight Data Engineering Fellows work on during the program are much more complicated and interesting than this coding challenge. This challenge only tests you on the basics. 
-
-
 
 Submitting a link to your repository
 Link to the specific repo for this project is submitted to the submission box provided through the coding challenge email
