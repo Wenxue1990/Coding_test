@@ -14,8 +14,8 @@ Disclosure: The projects that Insight Data Engineering Fellows work on during th
 
 
 
-### Submitting a link to your repository
-* Link to the specific repo for this project is submitted to the submission box provided through the coding challenge email
+Submitting a link to your repository
+Link to the specific repo for this project is submitted to the submission box provided through the coding challenge email
 
 
 ### Input Dataset
