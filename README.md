@@ -1,12 +1,12 @@
 # Table of Contents
 1. [Problem](README.md#problem)
-1. [Input Dataset](README.md#input-dataset)
-1. [Instructions](README.md#instructions)
-1. [Input vs Output](README.md#output)
-1. [Summarize my approach and run instructions](README.md#tips-on-getting-an-interview)
-1. [What to improve](README.md#questions?)
+1. [Input Dataset](README.md#Input Dataset)
+1. [Instructions](README.md#Instructions)
+1. [Input vs Output](README.md#Input vs Output)
+1. [Summarize my approach and run instructions](README.md#Summarize my approach and run instructions)
+1. [What to improve](README.md#What to improve)
 
-# Problem
+### Problem
 
 Imagine you are a data engineer working for an online pharmacy. You are asked to generate a list of all drugs, the total number of UNIQUE individuals who prescribed the medication, and the total drug cost, which must be listed in descending order based on the total drug cost and if there is a tie, drug name in ascending order. 
 
