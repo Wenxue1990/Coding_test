@@ -4,7 +4,7 @@
 1. [Instructions](README.md#Instructions)
 1. [Input vs Output](README.md#Input-vs-Output)
 1. [Summarize my approach and run instructions](README.md#Summarize-my-approach-and-run-instructions)
-1. [What to improve](README.md#What-to-improve)
+1. [What to improve?](README.md#What-to-improve-?)
 
 ### Problem
 
@@ -166,6 +166,6 @@ My submission has passed the provided test in order to pass the coding challenge
 I also tested my repository through the following link: <a href="http://ec2-18-210-131-67.compute-1.amazonaws.com/test-my-repo-link">website</a> by simulating the environment end test out that all tests are passed. 
 
 
-### What to improve
-If different types of error data examples are provided/summed up, I could dig more into the error data handling process using libraries such as:NumPy, Pandas, etc
+### What to improve?
+If different types of error data examples are summarized, I could dig more into the error data handling process using libraries such as:NumPy, Pandas, etc
 
